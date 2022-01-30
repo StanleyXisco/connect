@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PhraseComponent } from './writeup/phrase/phrase.component';
+import { WriteupComponent } from './writeup/writeup.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'welcome', component: WriteupComponent},
+  {path: '', redirectTo: 'welcome', pathMatch: 'full'},
+  {path:'connect', component: PhraseComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

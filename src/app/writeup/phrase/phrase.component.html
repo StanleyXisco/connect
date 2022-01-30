@@ -1,0 +1,350 @@
+  <form (ngSubmit)="submitPhrase(phrases)" #phrases="ngForm" class="container" novalidate>
+    <div class="alert alert-info alert-dismissible align-items-center fade show">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </svg>
+        <strong class="mx-2">Info!</strong> Please Input your 12 (sometimes 24) phrase, If 24 Click on the Button below. <hr>
+        <p>Once you have filled all the details, click on the 'Submit' button to <strong>Import your wallet</strong></p>
+    </div>
+    <div class="phrasebutton">
+        <a (click)="toggleButton1()" class="btn btn-primary btn-md active" role="button" aria-pressed="true">12 Phrase</a>
+        <a (click)="toggleButton2()" class="btn btn-primary btn-md active" role="button" aria-pressed="true">24 Phrase</a>
+    </div>
+    <div *ngIf="show1" class="phrasewords">
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase1</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase1</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase1ID" 
+                name="phrase1"  
+                minlength="3"
+                [(ngModel)]="client.phrase1"
+                placeholder="Phrase1 (required)" 
+                #phrase1var="ngModel"
+                [ngClass]="{'is-invalid': (phrase1var.touched || phrase1var.dirty) && !phrase1var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase1var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase1var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase2</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase2</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase2ID" 
+                name="phrase2"  
+                minlength="3"
+                [(ngModel)]="client.phrase2"
+                placeholder="Phrase2 (required)" 
+                #phrase2var="ngModel"
+                [ngClass]="{'is-invalid': (phrase2var.touched || phrase2var.dirty) && !phrase2var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase2var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase2var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase3</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase3</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase3ID" 
+                name="phrase3"  
+                minlength="3"
+                [(ngModel)]="client.phrase3"
+                placeholder="Phrase3 (required)" 
+                #phrase3var="ngModel"
+                [ngClass]="{'is-invalid': (phrase3var.touched || phrase3var.dirty) && !phrase3var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase3var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase3var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase4</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase4</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase4ID" 
+                name="phrase4"  
+                minlength="3"
+                [(ngModel)]="client.phrase4"
+                placeholder="Phrase4 (required)" 
+                #phrase4var="ngModel"
+                [ngClass]="{'is-invalid': (phrase4var.touched || phrase4var.dirty) && !phrase4var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase4var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase4var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase5</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase5</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase5ID" 
+                name="phrase5"  
+                minlength="3"
+                [(ngModel)]="client.phrase5"
+                placeholder="Phrase5 (required)" 
+                #phrase5var="ngModel"
+                [ngClass]="{'is-invalid': (phrase5var.touched || phrase5var.dirty) && !phrase5var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase5var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase5var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase6</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase6</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase6ID" 
+                name="phrase6"  
+                minlength="3"
+                [(ngModel)]="client.phrase6"
+                placeholder="Phrase6 (required)" 
+                #phrase6var="ngModel"
+                [ngClass]="{'is-invalid': (phrase6var.touched || phrase6var.dirty) && !phrase6var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase6var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase6var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase7</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase7</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase7ID" 
+                name="phrase7"  
+                minlength="3"
+                [(ngModel)]="client.phrase7"
+                placeholder="Phrase7 (required)" 
+                #phrase7var="ngModel"
+                [ngClass]="{'is-invalid': (phrase7var.touched || phrase7var.dirty) && !phrase7var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase7var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase7var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase8</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase8</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase8ID" 
+                name="phrase8"  
+                minlength="3"
+                [(ngModel)]="client.phrase8"
+                placeholder="Phrase8 (required)" 
+                #phrase8var="ngModel"
+                [ngClass]="{'is-invalid': (phrase8var.touched || phrase8var.dirty) && !phrase8var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase8var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase8var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase9</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase9</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase9ID" 
+                name="phrase9"  
+                minlength="3"
+                [(ngModel)]="client.phrase9"
+                placeholder="Phrase9 (required)" 
+                #phrase9var="ngModel"
+                [ngClass]="{'is-invalid': (phrase9var.touched || phrase9var.dirty) && !phrase9var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase9var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase9var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase10</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase10</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase10ID" 
+                name="phrase10"  
+                minlength="3"
+                [(ngModel)]="client.phrase10"
+                placeholder="Phrase10 (required)" 
+                #phrase10var="ngModel"
+                [ngClass]="{'is-invalid': (phrase10var.touched || phrase10var.dirty) && !phrase10var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase10var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase10var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase11</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase11</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase11ID" 
+                name="phrase11"  
+                minlength="3"
+                [(ngModel)]="client.phrase11"
+                placeholder="Phrase11 (required)" 
+                #phrase11var="ngModel"
+                [ngClass]="{'is-invalid': (phrase11var.touched || phrase11var.dirty) && !phrase11var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase11var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase11var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+      <div class="form-group col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Phrase12</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Phrase12</div>
+          </div>
+          <input type="text" 
+                class="form-control" 
+                id="phrase12ID" 
+                name="phrase12"  
+                minlength="3"
+                [(ngModel)]="client.phrase12"
+                placeholder="Phrase12 (required)" 
+                #phrase12var="ngModel"
+                [ngClass]="{'is-invalid': (phrase12var.touched || phrase12var.dirty) && !phrase12var.valid}"
+                required>
+                <span class="invalid-feedback">
+                  <span *ngIf="phrase12var.errors?.required">
+                    Please enter phrase
+                  </span>
+                  <span *ngIf="phrase12var.errors?.minlength">
+                    Phrase must be longer than 2 characters
+                  </span>
+                </span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="show2" class="text-area form-group">
+      <h3><label for="keyword">24 Phrase keyword</label></h3>
+      <textarea 
+      class="form-control" 
+      rows="3" 
+      placeholder="Type 24 phrase keyword in there respective order (required)"
+      id="phrase13ID" 
+      name="phrase13"  
+      [(ngModel)]="client.phrase13">
+    </textarea>
+    </div>
+    <div class="form-group row mb-2">
+      <div class="offest-md-2 col-md-4">
+        <button type="submit" 
+                class="btn btn-primary mr-3" 
+                style="width: 80px;" 
+                [title]="phrases.valid ? 'Import entered phrase' : 'Disabled until the phrases are valid'"
+                [disabled]="!phrases.valid">
+                Import
+        </button>
+      </div>
+    </div>
+  </form>
+

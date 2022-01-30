@@ -1,0 +1,80 @@
+<div class="stock bg-white">
+<nav class="container navbar navbar-expand-lg bg-white navbar-light fixed-top">
+    <a class="navbar-brand left text" href="#">
+        <img src="/assets/images/logo.svg" width="40" height="40" class="d-inline-block align-top" alt="WalletConnect">
+        WalletConnect</a>
+    <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+      <ul ngbNav class="navbar-nav mr-auto nav-tabs">
+        <li ngbNavItem class="nav-item active">
+          <a ngbNavLink class="nav-link" [routerLink]="['/welcome']">Home</a>
+        </li>
+        <li ngbNavItem class="nav-item">
+          <a ngbNavLink class="nav-link" href="#">Documentation</a>
+        </li>
+        <li ngbNavItem class="nav-item">
+            <a ngbNavLink class="nav-link" href="#">Github</a>
+        </li>
+        <li ngbNavItem class="nav-item">
+            <a ngbNavLink class="nav-link" href="#">Wallet</a>
+        </li>
+        <li ngbNavItem class="nav-item">
+            <a ngbNavLink class="nav-link" href="#">App</a>
+        </li>
+        <li ngbNavItem class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" ngbDropdownMenu>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</div>
+  <br>
+  <router-outlet></router-outlet>
+  <footer class="footer-07">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-mid-12 text-center">
+                <h2 class="footer-heading">
+                    <a class="navbar-brand left" href="#">
+                        <img src="/assets/images/logo.svg" width="40" height="40" class="d-inline-block align-top" alt="">
+                        WalletConnect</a>
+                </h2>
+                <p class="menu">
+                    <a [routerLink]="['/welcome']">Home</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Github</a>
+                    <a href="#">Wallet</a>
+                    <a href="#">App</a>
+                    <a href="#">ContactUs</a>
+                </p>      
+                <ul class="list-unstyled">
+                    <li class="in"><a href="https://discord.gg/jhxMvxP" data-toggle="tooltip" data-placement="top" title="Discord" data-original-title="Discord"><img src="assets/images/discord.svg" class="footimg"></a></li>
+                    <li class="in"><a href="https://t.me/walletconnect_announcements" data-toggle="tooltip" data-placement="top" title="Telegram" data-original-title="Telegram"><img src="assets/images/telegram.svg" class="footimg"></a></li>
+                    <li class="in"><a href="https://twitter.walletconnect.org/" data-toggle="tooltip" data-placement="top" title="Twitter" data-original-title="Twitter"><img src="assets/images/twitter.svg" class="footimg"></a></li>
+                    <li class="in"><a href="https://github.com/walletconnect" data-toggle="tooltip" data-placement="top" title="Github" data-original-title="Github"><img src="assets/images/github.svg" class="footimg"></a></li>
+                </ul>             
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <p class="copyright">
+              Copyright ©<script>document.write(new Date().getFullYear());</script>2022 All rights reserved | This Template is made with love and built by <a href="#" target="_blank">WalletConnect</a></p>
+            </div>
+        </div>
+    </div>
+</footer>

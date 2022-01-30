@@ -1,0 +1,24 @@
+.phrasebutton {
+  padding: 10px;
+  margin: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-left: 100px;
+}
+
+.phrasebutton > a {
+  margin-right: 20px;
+}
+
+button {
+  margin: 2rem;
+}
+
+.phrasewords {
+  padding-right: 300px;
+}
+
+.text-area {
+  padding-left: 18px;
+  padding-right: 50px;
+}
