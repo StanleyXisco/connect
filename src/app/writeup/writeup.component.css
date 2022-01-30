@@ -39,6 +39,17 @@ img {
   line-height: 1;
 }
 
+@media screen and (max-width: 768px) {
+  .h1modified {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 40px;
+  }
+  .h1modified br {
+    display: none;
+  }
+}
+
 .bold {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;

@@ -18,6 +18,12 @@ button {
   padding-right: 300px;
 }
 
+@media screen and (max-width: 768px) {
+  .phrasewords {
+    padding-right: 0px;
+  }
+}
+
 .text-area {
   padding-left: 18px;
   padding-right: 50px;
