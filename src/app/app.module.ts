@@ -18,13 +18,15 @@ import { PhraseComponent } from './writeup/phrase/phrase.component';
 
 import { environment } from 'src/environments/environment';
 import { PhraseService } from './services/phrase.service';
+import { SuccessfulComponent } from './successful/successful.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    PhraseComponent
+    PhraseComponent,
+    SuccessfulComponent
   ],
   imports: [
     BrowserModule,

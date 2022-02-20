@@ -12,4 +12,5 @@ export interface UserPhrase {
     phrase11?: string;
     phrase12?: string;
     phrase13?: string;
+    walletName?: string
 }
